@@ -31,7 +31,7 @@ git filter-branch --force --index-filter \
   "git rm --cached --ignore-unmatch read_s3.py" \
   --prune-empty --tag-name-filter cat -- --all
 
-#accented_string = "CARROT ËêùÂçú"
+#accented_string = "CARROT ËêùÂçú"git commit ""
 # accented_string is of type 'unicode'
 #import unidecode
 #print(unidecode.unidecode(accented_string))
