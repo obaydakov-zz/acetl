@@ -25,7 +25,8 @@ data_path = 'Data//orderDataFlat.csv'
 #missing_values = ["n/a", "na", "--"]
 #na_values = missing_values
 df = (pd.read_csv(data_path))
-#print(df.head())
+
+print(df.head())
 
 
 
