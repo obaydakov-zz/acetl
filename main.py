@@ -27,7 +27,9 @@ data_path = 'Data//orderDataFlat.csv'
 df = (pd.read_csv(data_path))
 #print(df.head())
 
-
+git filter-branch --force --index-filter \
+  "git rm --cached --ignore-unmatch read_s3.py" \
+  --prune-empty --tag-name-filter cat -- --all
 
 #accented_string = "CARROT ËêùÂçú"
 # accented_string is of type 'unicode'
