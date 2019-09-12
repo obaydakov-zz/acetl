@@ -1,0 +1,70 @@
+{
+    "file_name": "Temperature-309215_issue_report.json",
+    "Row duplicates": 0,
+    "Columns": {
+        "SensorID": {
+            "Missing values": 0,
+            "Negative values": 0,
+            "Data Audit, %": 0,
+            "Outliers": 0,
+            "ID column": true,
+            "Constant column": true,
+            "Number of duplicates": 1,
+            "Currency column": false
+        },
+        "Value": {
+            "Missing values": 0,
+            "Negative values": 0,
+            "Data Audit, %": 0,
+            "Outliers": 11284,
+            "ID column": false,
+            "Constant column": false,
+            "Number of duplicates": 216,
+            "Currency column": false
+        },
+        "Battery": {
+            "Missing values": 0,
+            "Negative values": 0,
+            "Data Audit, %": 0,
+            "Outliers": 0,
+            "ID column": false,
+            "Constant column": true,
+            "Number of duplicates": 1,
+            "Currency column": false
+        },
+        "DataMessageGUID": {
+            "Missing values": 0,
+            "ID column": true,
+            "Constant column": false,
+            "Number of duplicates": 97,
+            "Currency column": false,
+            "Data Audit, %": 0,
+            "Type": "String"
+        },
+        "Sensor Name": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": true,
+            "Number of duplicates": 1,
+            "Currency column": false,
+            "Data Audit, %": 0,
+            "Type": "String"
+        },
+        "Formatted Value": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": false,
+            "Number of duplicates": 290,
+            "Currency column": false,
+            "Data Audit, %": 0,
+            "Type": "String"
+        },
+        "Date": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": false,
+            "Data Audit, %": 0,
+            "Type": "Datetime"
+        }
+    }
+}

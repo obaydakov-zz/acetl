@@ -1,0 +1,156 @@
+{
+    "file_name": "orderDataFlat_issue_report.json",
+    "Row duplicates": 0,
+    "Total rows": 258651,
+    "Total columns": 17,
+    "Columns": {
+        "unitPrice": {
+            "Missing values": 0,
+            "Negative values": 0,
+            "Data Audit, %": 0,
+            "Outliers": 859,
+            "ID column": false,
+            "Constant column": false,
+            "Number of duplicates": 2068,
+            "Currency column": false
+        },
+        "totalPrice": {
+            "Missing values": 0,
+            "Negative values": 0,
+            "Data Audit, %": 0,
+            "Outliers": 956,
+            "ID column": false,
+            "Constant column": false,
+            "Number of duplicates": 5119,
+            "Currency column": false
+        },
+        "quantity": {
+            "Missing values": 0,
+            "Negative values": 0,
+            "Data Audit, %": 0,
+            "Outliers": 4417,
+            "ID column": false,
+            "Constant column": false,
+            "Number of duplicates": 228,
+            "Currency column": false
+        },
+        "OutletName": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": false,
+            "Number of duplicates": 298,
+            "Currency column": false,
+            "Data Audit, %": 0,
+            "Type": "String"
+        },
+        "supplierName": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": false,
+            "Number of duplicates": 657,
+            "Currency column": false,
+            "Data Audit, %": 0,
+            "Type": "String"
+        },
+        "unitPriceCurrencyCode": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": false,
+            "Number of duplicates": 4,
+            "Currency column": false,
+            "Data Audit, %": 0,
+            "Type": "String"
+        },
+        "totalPriceCurrencyCode": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": false,
+            "Number of duplicates": 4,
+            "Currency column": false,
+            "Data Audit, %": 0,
+            "Type": "String"
+        },
+        "Product": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": false,
+            "Number of duplicates": 13289,
+            "Currency column": true,
+            "Data Audit, %": 0,
+            "Type": "String"
+        },
+        "sku": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": false,
+            "Number of duplicates": 14019,
+            "Currency column": false,
+            "Data Audit, %": 0,
+            "Type": "String"
+        },
+        "unitSize": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": false,
+            "Number of duplicates": 42,
+            "Currency column": false,
+            "Data Audit, %": 0,
+            "Type": "String"
+        },
+        "supplierProductCode": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": false,
+            "Number of duplicates": 6350,
+            "Currency column": false,
+            "Data Audit, %": 0,
+            "Type": "String"
+        },
+        "OrderId": {
+            "Missing values": 0,
+            "ID column": true,
+            "Constant column": false,
+            "Number of duplicates": 31248,
+            "Currency column": false,
+            "Data Audit, %": 0,
+            "Type": "String"
+        },
+        "notes": {
+            "Missing values": 1,
+            "ID column": false,
+            "Constant column": false,
+            "Number of duplicates": 455,
+            "Currency column": true,
+            "Data Audit, %": 100,
+            "Type": "String"
+        },
+        "timeDelivered": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": false,
+            "Data Audit, %": 0,
+            "Type": "Datetime"
+        },
+        "timeCreated": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": false,
+            "Data Audit, %": 0,
+            "Type": "Datetime"
+        },
+        "timePlaced": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": false,
+            "Data Audit, %": 0,
+            "Type": "Datetime"
+        },
+        "Time Placed": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": false,
+            "Data Audit, %": 0,
+            "Type": "Datetime"
+        }
+    }
+}

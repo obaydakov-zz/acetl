@@ -1,0 +1,23 @@
+{
+"s3_backet_name":".....",
+"file_name":".....",
+"mapping":{
+           // DATA WE NEED
+          "mandatory_columns":{
+          "Product Name":"<coloumn_name_from_csv>",
+          "Transaction Date":"<coloumn_name_from_csv>",
+          "Sale Quantity": "<coloumn_name_from_csv>",
+          },
+          // Optional Data
+          "optional_columns":{
+            "Customer ID":"<coloumn_name_from_csv>",
+            "Transaction Time":"<coloumn_name_from_csv>"
+            }
+ }
+}
+
+
+
+
+
+}

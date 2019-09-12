@@ -1,0 +1,2 @@
+time,level,message
+10/09/2019 18:24:42,INFO,"SPLIT 'date' INTO YEAR AND MONTH - 'date Year' , 'date Month' "

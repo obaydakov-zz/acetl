@@ -1,0 +1,70 @@
+{
+    "file_name": "Recommen_issue_report.json",
+    "Row duplicates": 0,
+    "Total rows": 2891,
+    "Total columns": 7,
+    "Columns": {
+        "OrderId": {
+            "Missing values": 0,
+            "Negative values": 0,
+            "Data Audit, %": 0,
+            "Outliers": 0,
+            "ID column": true,
+            "Constant column": false,
+            "Number of duplicates": 0,
+            "Currency column": false
+        },
+        "UserId": {
+            "Missing values": 0,
+            "Negative values": 0,
+            "Data Audit, %": 0,
+            "Outliers": 0,
+            "ID column": true,
+            "Constant column": false,
+            "Number of duplicates": 392,
+            "Currency column": false
+        },
+        "PupId": {
+            "Missing values": 0,
+            "Negative values": 0,
+            "Data Audit, %": 0,
+            "Outliers": 0,
+            "ID column": true,
+            "Constant column": false,
+            "Number of duplicates": 17,
+            "Currency column": false
+        },
+        "TotalCharges": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": false,
+            "Number of duplicates": 287,
+            "Currency column": true,
+            "Data Audit, %": 0,
+            "Type": "String"
+        },
+        "CommonId": {
+            "Missing values": 0,
+            "ID column": true,
+            "Constant column": false,
+            "Number of duplicates": 0,
+            "Currency column": false,
+            "Data Audit, %": 0,
+            "Type": "String"
+        },
+        "OrderDate": {
+            "Missing values": 0,
+            "ID column": false,
+            "Constant column": false,
+            "Data Audit, %": 0,
+            "Type": "Datetime"
+        },
+        "PickupDate": {
+            "Missing values": 31,
+            "ID column": false,
+            "Constant column": false,
+            "Data Audit, %": 98,
+            "Type": "Datetime"
+        }
+    }
+}
