@@ -21,7 +21,7 @@ col_need=["Order Item Id" ,"Order Type" ,"Lazada Id"   ,"Seller SKU","Lazada SKU
 col_optional=[]
 
 data_path = 'Data//retail_DS.csv'
-#data_path = 'Data//orderDataFlat.csv'
+data_path = 'Data//orderDataFlat.csv'
 #missing_values = ["n/a", "na", "--"]
 #na_values = missing_values
 df = (pd.read_csv(data_path))
