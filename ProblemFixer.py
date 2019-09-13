@@ -59,7 +59,7 @@ class ProblemFixer():
         self.df[col]=self.df[col].apply(lambda x: self.strip_accents(x))
      
     #* process column with missing values   
-    def missing_values_column(seld,col, method,value=None):
+    def missing_values_column(self,col, method,value=None):
         if method=="mean":
             self.df[col].fillna(self.df[col].mean(), inplace=True)
         if method=="median":
@@ -146,4 +146,12 @@ class ProblemFixer():
         # Keep only if True (not outliers)
         self.df=self.df[normal]
         self.logger_append(datetime.now().strftime("%d/%m/%Y %H:%M:%S"), "INFO", "REMOVE {} OUTLIERS FROM '{}' BASED ON IRQ with low={} and high={} ".format(outliers, col,low,high))
+    
+    #* fill dates missing values uniformly
+    def dates_missing_values(self,col):
+        while True:
+            if self.df[col].isnull().sum()==0:
+                break 
+        self.df[col].fillna(method="pad",limit=1, inplace=True)
+        self.df[col].fillna(method="backfill",limit=1, inplace=True)
         

@@ -26,7 +26,7 @@ data_path = 'Data//orderDataFlat.csv'
 #na_values = missing_values
 df = (pd.read_csv(data_path))
 
-print(df.head())
+#print(df.head())
 
 
 
@@ -199,26 +199,36 @@ def Analysys(path, filename):
 
 
 df1=pd.DataFrame({'date': [1546315200,	1545553318,	1545553318,"2019/09/08"],
-                 'date_new': ["2019/09/08",	np.nan,	"2019/09/10","2019/09/11"],
+                 'date_new': ["2019/09/08",	np.nan,	np.nan,"2019/09/11"],
                  "string":["BEETROOT������ʆ?","CARROT ËêùÂçú","CARROT ËêùÂçú","CARROT ËêùÂçú"],
                  "negative":[0,  3, -9, -90]})
+
+
+
+print(df1)
 
 data_path = 'Data//orderDataFlat.csv'
 
 import glob
 path = "Data//*.csv"
-for fname in glob.glob(path):
-    print(fname)
-    Analysys(fname.replace("\\","//"), fname.split("\\")[1].split(".")[0])
+#for fname in glob.glob(path):
+#    print(fname)
+#    Analysys(fname.replace("\\","//"), fname.split("\\")[1].split(".")[0])
+#print(df.columns)
+#print(df["notes"].head())
 
-'''
-df = (pd.read_csv(data_path))
-print(df.columns)
-print(len(df['DataMessageGUID                      '].unique().tolist()))
-print(df['DataMessageGUID                      '].shape[0])
-df_pivot=df.pivot_table(index=['DataMessageGUID                      '], aggfunc='size')
-print(df_pivot[df_pivot > 1].head())
-'''
+
+#print(df['notes'].unique().tolist())
+#print(df.isnull().sum())
+
+#P=ProblemFinder(df)
+#df_short=df["notes"].head(100)
+#print(df_short.isnull().sum())
+#print(P.df.isnull().sum())
+#print(P.missing_zero_values_table())
+
+
+
 
 #A=ProblemFinder(df)
 #print(A.columns_ids())
@@ -270,103 +280,6 @@ print(df_pivot[df_pivot > 1].head())
 #                                 box=True, format=None, coerce=False, unit='ns')
 
 
-
-
-'''
-A=ProblemFinder(df)
-id_columns=A.columns_ids()
-constant_columns=A.columns_constant_vales()
-currency_columns=A.columns_currency()
-msv_table_all=A.missing_zero_values_table()
-mcv_columns=list(msv_table_all.index)
-
-
-#* Check numeric columns
-numeric_columns=A.get_numeric_columns()
-if numeric_columns:
-    #msv_table=msv_table_all.loc[numeric_columns,"Missing Values"].fillna(0)
-
-    msv_dict={num_column:{"Missing values":int(msv_table_all.loc[num_column,"Missing Values"])  
-                          if num_column in mcv_columns else 0} 
-              for num_column in numeric_columns}
-    msv_percent_dict={num_column:{"% Total Zero Missing Values":int(msv_table_all.loc[num_column,"% Total Zero Missing Values"])  
-                          if num_column in mcv_columns else 0} 
-              for num_column in numeric_columns}
-        
-    negv_dict={num_column:{"Negative values":int(calculate_negative_values(A.df[num_column]))}  
-            for num_column in numeric_columns}
-    outliers_dict={num_column:{"Outliers":int(calculate_numerical_outliers_Z(A.df,num_column))} 
-                for num_column in numeric_columns}
-    id_dict={ num_column:{"ID column":True if num_column in id_columns else False} 
-            for num_column in numeric_columns  }
-    const_dict={ num_column:{"Constant column":True if num_column in constant_columns else False} 
-                for num_column in numeric_columns  }
-    duplicates_dict={num_column:{"Number of duplicates":int(A.number_duplicates_column(num_column))} 
-                    for num_column in numeric_columns}
-    currency_dict={ num_column:{"Currency column":True if num_column in currency_columns else False} 
-                for num_column in numeric_columns  }
-    type_dict={num_column:{"Type":"Numeric"} for num_column in numeric_columns} 
-    final_numeric={key: {**value,**negv_dict[key], **msv_percent_dict[key],
-                    **outliers_dict[key],**id_dict[key], 
-                    **const_dict[key],**duplicates_dict[key],
-                    **currency_dict[key]
-                    } for key, value in msv_dict.items()}
-    #pprint.pprint(final_numeric)
-
-#* check "object" columns
-object_columns=A.type_columns_dict().get("object",None)
-if object_columns:
-    #msv_table=msv_table_all.loc[object_columns,"Missing Values"].fillna(0)
-    msv_dict={num_column:{"Missing values":int(msv_table_all.loc[num_column,"Missing Values"])
-                          if num_column in mcv_columns else 0} 
-              for num_column in object_columns}
-    id_dict={ num_column:{"ID column":True if num_column in id_columns else False} 
-         for num_column in object_columns  }
-    const_dict={ num_column:{"Constant column":True if num_column in constant_columns else False} 
-            for num_column in object_columns  }
-    duplicates_dict={num_column:{"Number of duplicates":int(A.number_duplicates_column(num_column))} 
-                 for num_column in object_columns}
-    currency_dict={ num_column:{"Currency column":True if num_column in currency_columns else False} 
-            for num_column in object_columns  }
-    type_dict={num_column:{"Type":"String"} for num_column in object_columns} 
-    final_object ={key: {**value, **id_dict[key], 
-                    **const_dict[key],**duplicates_dict[key],
-                    **currency_dict[key],**type_dict[key]
-                    } for key, value in msv_dict.items()}
-    #pprint.pprint(final_object)
-
-#* check datetype columns
-datetime_columns=A.type_columns_dict().get("datetime64[ns]",None)
-
-if datetime_columns:
-    msv_dict={dt_column:{"Missing values":int(msv_table_all[dt_column]) if dt_column in mcv_columns else 0 } 
-              for dt_column in datetime_columns}
-    id_dict={ dt_column:{"ID column":True if dt_column in id_columns else False} 
-         for dt_column in datetime_columns  }
-    const_dict={ dt_column:{"Constant column":True if dt_column in constant_columns else False} 
-            for dt_column in datetime_columns  } 
-    #outliers_dict= A.datetime_ouliers(A.df[datetime_columns],2)
-    type_dict={dt_column:{"Type":"Datetime"} for dt_column in datetime_columns} 
-    final_datetime ={key: {**value, **id_dict[key], 
-                    **const_dict[key],
-    #                **outliers_dict[key],
-                    **type_dict[key]
-                    } for key, value in msv_dict.items()}
-
-
-print(A.df.shape[1])
-print(len(final_numeric.keys())+len(final_object.keys())+len(final_datetime.keys()))
-all_col=A.df.columns
-processed_col=list(final_numeric.keys())+list(final_object.keys())+list(final_datetime.keys())
-print(list(set(all_col) - set(processed_col)))
-final_all={**final_numeric,**final_object,**final_datetime}
-final=dict()
-final["file_name"]="retail_DS.csv"
-final["Row duplicates"]=A.duplicates_in_dataset()
-final["Columns"]=final_all
-with open('problem_report_retail_DS.json', 'w') as outfile:
-    json.dump(final, outfile)
-'''
 
 
 
